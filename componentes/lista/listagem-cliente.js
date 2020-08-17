@@ -31,7 +31,6 @@ listarClientes().then( exibe => {
             corpoTabela.appendChild(exibeCliente(indice.cpf, indice.nome, indice.id))
         })
     }
-
 )
 
 
