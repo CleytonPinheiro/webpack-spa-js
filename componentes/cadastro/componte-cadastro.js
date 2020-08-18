@@ -19,7 +19,11 @@ const cadastro = `
 form.innerHTML = cadastro
 
 const inicializaCadastro = () => {
+    const container = document.querySelector('[data-container]')
     eventEnvia(form)
+    container.appendChild( form )
 
     return form
 }
+
+export default inicializaCadastro
