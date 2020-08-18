@@ -20,10 +20,9 @@ const conteudo = `
           </th>
       </tr>
 </thead>
-
 `
 
-const container = document.querySelector('[data-container]')
+const container = document.querySelector(".data-container")
 
 const tabela = document.createElement("table")
 
@@ -31,7 +30,7 @@ tabela.innerHTML = conteudo
 tabela.classList.add("table")
 
 container.appendChild(tabela)
-console.log(container)
+
 const corpoTabela = document.createElement('tbody')
 
 const exibeCliente = (cpf, nome, id) => {
