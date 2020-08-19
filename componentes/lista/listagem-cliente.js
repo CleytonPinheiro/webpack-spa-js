@@ -22,7 +22,7 @@ const conteudo = `
 </thead>
 `
 
-const container = document.querySelector(".data-container")
+const container = document.querySelector('[data-container]')
 
 const tabela = document.createElement("table")
 
@@ -30,6 +30,12 @@ tabela.innerHTML = conteudo
 tabela.classList.add("table")
 
 container.appendChild(tabela)
+
+const novoCliente = document.querySelector(".btn")
+
+novoCliente.addEventListener('click', () => {
+    inicializaCadastro()
+})
 
 const corpoTabela = document.createElement('tbody')
 

@@ -3,16 +3,16 @@ import { cadastrarClientes } from "../../api/cliente";
 
 const eventEnvia = (form) => {
 
-    const formCadastroCliente = document.querySelector("[data-form]")
+   // const formCadastroCliente = document.querySelector("[data-form]")
 
-    formCadastroCliente.addEventListener("submit",
+    form.addEventListener("submit",
         event => {
             event.preventDefault()
 
             const nome = event.target.querySelector("[data-nome]").value
             const cpf = event.target.querySelector("[data-cpf]").value
 
-            if(validaCPF(cpf)){
+            if(validaCPF(cpf) === true ){
                 cadastrarClientes(nome, cpf)
             } else {
                 alert('O CPF não é válido')
