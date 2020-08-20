@@ -4,10 +4,21 @@ import "../../assets/css/clientes.css"
 
 const removeCliente = (id) => {
     if(confirm("Deseja deletar o cliente ?")){
-        debugger;
         deletaCliente(id)
         window.location.reload()
     }
+}
+
+const criarBotaoExcluir = (id) => {
+    const botao = document.createElement('button')
+    botao.classList.add('btn', 'btn-danger')
+    botao.innerHTML = 'Excluir'
+
+    botao.addEventListener('click', ()=> {
+        removeCliente(id)
+    })
+
+    return botao
 }
 
 const criaCorpoTabela = ( tabela ) => {
@@ -19,12 +30,13 @@ const criaCorpoTabela = ( tabela ) => {
         const conteudoLinha = `
     <td>${cpf}</td>
     <td>${nome}</td>
-    <button type="button" class="btn btn-danger" onclick="removeCliente(${id})">Excluir</button>
+
 
     <button type="button" class="btn btn-info" onclick="navegacao('/edita?id=${id}'); return false ">Editar</button>
 
 `
         linha.innerHTML = conteudoLinha;
+        linha.appendChild(criarBotaoExcluir(id))
         return linha;
     };
 
