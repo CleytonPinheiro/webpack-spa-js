@@ -59,5 +59,5 @@ const inicializaTabela = () => {
     return tabela
 }
 
-export default inicializaTabela()
+export default inicializaTabela
 
