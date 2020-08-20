@@ -1,4 +1,6 @@
 
+import eventoForm from "./edita-cliente";
+
 const inicializaFormEdicao = () => {
     const form = document.createElement('form')
 
@@ -17,4 +19,10 @@ const inicializaFormEdicao = () => {
 </div>
 `
     form.innerHTML = formEdicao
+
+    eventoForm(form)
+
+    return form
 }
+
+export default inicializaFormEdicao
